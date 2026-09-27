@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply text-asphalt antialiased; }
+  input, select, textarea { @apply text-asphalt; }
+  :focus-visible { outline: 2px solid #F2A900; outline-offset: 2px; }
+}
+
+@layer components {
+  .card { @apply bg-white border border-line rounded-lg; }
+  .input {
+    @apply w-full rounded-md border border-line bg-white px-3 py-2 text-[15px]
+      focus:border-asphalt focus:outline-none focus:ring-2 focus:ring-sign/40 disabled:bg-lane;
+  }
+  .label { @apply block text-sm font-medium text-asphalt-500 mb-1; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-[15px] font-semibold
+      transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary { @apply btn bg-sign text-asphalt hover:bg-sign-dark; }
+  .btn-dark { @apply btn bg-asphalt text-white hover:bg-asphalt-700; }
+  .btn-ghost { @apply btn border border-line bg-white text-asphalt hover:bg-lane; }
+  .btn-danger { @apply btn border border-loss/30 bg-white text-loss hover:bg-loss-soft; }
+  .th { @apply px-3 py-2.5 text-left text-[13px] font-semibold text-asphalt-500 whitespace-nowrap; }
+  .td { @apply px-3 py-2.5 text-[15px] border-t border-line align-top; }
+  .num { @apply font-display tabular-nums tracking-tight; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
